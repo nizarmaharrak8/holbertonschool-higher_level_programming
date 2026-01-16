@@ -2,9 +2,5 @@
 def uppercase(str):
     for ch in str:
         print("{}".format(
-            chr(ord(ch) - 32) if 97 <= ord(ch) <= 122 else ch), end='')
+             chr(ord(ch) - 32) if 97 <= ord(ch) <= 122 else ch), end='')
     print()
-
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
