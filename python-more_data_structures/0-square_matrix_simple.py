@@ -1,21 +1,14 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
+    if matrix is None:
+        matrix = []
+
+    new_matrix = []
+
     for row in matrix:
-        for x in range(len(row)):
-            if x != len(row) - 1:
-                print("{:d}".format(row[x]), end=" ")
-            else:
-                print("{:d}".format(row[x]), end="")
-    print()
-
-
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-
-new_matrix = square_matrix_simple(matrix)
-print(new_matrix)
-print(matrix)
+        new_row = []
+        for value in row:
+            square = value ** 2
+            new_row.append(square)
+        new_matrix.append(new_row)
+    return new_matrix
