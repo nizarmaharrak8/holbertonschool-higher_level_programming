@@ -16,8 +16,8 @@ def roman_to_int(roman_string):
     result = 0
     prev = 0
 
-    for l in roman_string:
-        value = roman_map[l]
+    for char in roman_string:
+        value = roman_map[char]
         if value > prev:
             result += value - 2 * prev
         else:
