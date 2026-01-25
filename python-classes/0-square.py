@@ -8,5 +8,4 @@ class Square:
     """
     Docstring for Square
     """
-
     pass
