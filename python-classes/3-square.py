@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-Docstring for python-classes.0-square
-"""
+"""Docstring for python-classes.0-square"""
+
 
 class Square:
     """
