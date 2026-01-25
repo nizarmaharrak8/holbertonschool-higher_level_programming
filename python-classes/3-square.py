@@ -19,8 +19,8 @@ class Square:
     
     def area(self):
         """
-		Docstring for area
-		
-		:param self: Description
-		"""
+        Docstring for area
+       
+       :param self: Description
+       """
         return self.__size ** 2
