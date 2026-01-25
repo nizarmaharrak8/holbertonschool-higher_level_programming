@@ -2,8 +2,6 @@
 """
 Docstring for python-classes.0-square
 """
-# size must be >= 0
-
 
 class Square:
     """
