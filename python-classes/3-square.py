@@ -16,9 +16,5 @@ class Square:
         self.__size = size
     
     def area(self):
-        """
-        Docstring for area
-       
-       :param self: Description
-       """
+        """" Calculates and returns the area of the square."""
         return self.__size ** 2
