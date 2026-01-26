@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""Defines a Square class."""
-
 
 class Square:
-    """Docstring for Square"""
-
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -13,6 +9,4 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Calculates and returns the area of the square."""
         return self.__size ** 2
-
