@@ -34,19 +34,3 @@ class Square:
         if self.__size >= 1:
             for i in range(self.__size):
                 print("#" * self.__size)
-
-
-my_square = Square(3)
-my_square.my_print()
-
-print("--")
-
-my_square.size = 10
-my_square.my_print()
-
-print("--")
-
-my_square.size = 0
-my_square.my_print()
-
-print("--")
