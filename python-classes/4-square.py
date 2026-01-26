@@ -6,10 +6,11 @@ class Square:
     """Represents a square with a private size attribute."""
 
     def __init__(self, size=0):
+        """Initializes the square with a given size."""
         self.size = size
 
     def area(self):
-        """Calculates the area of the square."""
+        """Returns the current square area."""
         return self.__size ** 2
 
     @property
@@ -19,7 +20,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Sets the size with validation."""
+        """Sets the size of the square with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
