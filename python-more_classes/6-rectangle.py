@@ -3,6 +3,7 @@
 Defines a Rectangle class
 """
 
+
 class Rectangle:
     """Rectangle class"""
 
@@ -57,10 +58,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        rows = []
-        for _ in range(self.__height):
-            rows.append("#" * self.__width)
-        return "\n".join(rows)
+        return "\n".join("#" * self.__width for _ in range(self.__height))
 
     def __repr__(self):
         """Return string to recreate instance"""
