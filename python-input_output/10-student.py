@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Defines a Student class with a JSON serialization method that can filter attributes.
+Defines a Student class with a JSON serialization method
+that can filter attributes.
 """
 
 
@@ -16,8 +17,11 @@ class Student:
     def to_json(self, attrs=None):
         """
         Returns a dictionary representation of the Student instance.
-        If attrs is a list of strings, only attributes in this list are included.
+        If attrs is a list of strings, only attributes in this list
+        are included.
         """
         if isinstance(attrs, list):
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+            return {key: value for key, value in self.__dict__.items()
+                    if key in attrs}
         return self.__dict__.copy()
+
