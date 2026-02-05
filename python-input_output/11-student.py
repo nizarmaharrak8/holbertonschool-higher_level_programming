@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a Student class with a JSON serialization method
-that can filter attributes.
+Defines a Student class with JSON serialization and deserialization.
 """
 
 
@@ -24,3 +23,12 @@ class Student:
             return {key: value for key, value in self.__dict__.items()
                     if key in attrs}
         return self.__dict__.copy()
+
+    def reload_from_json(self, json):
+        """
+        Replaces all attributes of the Student instance with values
+        from the given dictionary.
+        """
+        for key, value in json.items():
+            setattr(self, key, value)
+
