@@ -1,40 +1,27 @@
 #!/usr/bin/python3
 """
-Docstring for python-serialization.task_01_pickle
+Docstring for python-serialization.task_02_csv
 """
-import pickle
+import csv
+import json
 
 
-class CustomObject:
+def convert_csv_to_json(csv_filename):
     """
-        Docstring for CustomObject
+        Docstring for convert_csv_to_json
+
+        :param csv_filename: Description
         """
+    try:
+        data = []
+        with open(csv_filename, 'r', encoding='utf-8') as f:
+            value = csv.DictReader(f)
+            for row in value:
+                data.append(row)
 
-    def __init__(self, name, age, is_student):
-        self.name = name
-        self.age = age
-        self.is_student = is_student
+        with open('data.json', 'w', encoding='utf-8') as file:
+            json.dump(data, file)
 
-    def display(self):
-        print(f"Name: {self.name}")
-        print(f"Age: {self.age}")
-        print(f"Is Student: {self.is_student}")
-
-    def serialize(self, filename):
-        try:
-            with open(filename, 'wb') as f:
-                pickle.dump(self, f)
-            return True
-        except (IOError, pickle.PickleError) as e:
-            print(f"Error serializing object: {e}")
-            return False
-
-    @classmethod
-    def deserialize(cls, filename):
-        try:
-            with open(filename, 'rb') as f:
-                return pickle.load(f)
-        except (FileNotFoundError, EOFError, pickle.UnpicklingError,
-                AttributeError, IOError) as e:
-            print(f"Error deserializing object: {e}")
-            return None
+        return True
+    except (FileNotFoundError, PermissionError, csv.Error):
+        return False
