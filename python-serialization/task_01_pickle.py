@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-Pickling Custom Classes
+Docstring for python-serialization.task_01_pickle
 """
-
 import pickle
 
 
 class CustomObject:
-    """A custom Python object with name, age, and is_student attributes."""
+    """
+        Docstring for CustomObject
+        """
 
     def __init__(self, name, age, is_student):
         self.name = name
@@ -15,38 +16,25 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
-        """Prints the attributes of the object in the required format."""
-        print("Name: {}".format(self.name))
-        print("Age: {}".format(self.age))
-        print("Is Student: {}".format(self.is_student))
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename):
-        """
-        Serialize the current instance to a file using pickle.
-
-        Args:
-            filename (str): The file to save the object
-        """
         try:
-            with open(filename, "wb") as f:
+            with open(filename, 'wb') as f:
                 pickle.dump(self, f)
-        except (OSError, pickle.PickleError):
-            return None
+            return True
+        except (IOError, pickle.PickleError) as e:
+            print(f"Error serializing object: {e}")
+            return False
 
     @classmethod
     def deserialize(cls, filename):
-        """
-        Deserialize an instance of CustomObject from a file.
-
-        Args:
-            filename (str): The file to load the object from
-
-        Returns:
-            CustomObject: The deserialized object, or None if error
-        """
         try:
-            with open(filename, "rb") as f:
-                obj = pickle.load(f)
-            return obj
-        except (OSError, pickle.PickleError):
+            with open(filename, 'rb') as f:
+                return pickle.load(f)
+        except (FileNotFoundError, EOFError, pickle.UnpicklingError,
+                AttributeError, IOError) as e:
+            print(f"Error deserializing object: {e}")
             return None
