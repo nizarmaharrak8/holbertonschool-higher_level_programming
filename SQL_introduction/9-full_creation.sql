@@ -1,4 +1,4 @@
--- Create a new table named second_table with specific columns and constraints
+-- Write a script that creates a new table called second_table with the following columns:
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256) NOT NULL,
