@@ -1,3 +1,4 @@
+-- Create a new table called second_table with the following columns: id (INT), name (VARCHAR(256)), and score (INT). Then, insert the following records into the second_table:
 CREATE TABLE IF NOT EXISTS second_table (
     id INT,
     name VARCHAR(256) NOT NULL,
